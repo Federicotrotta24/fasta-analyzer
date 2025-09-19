@@ -37,20 +37,24 @@ pip install -r requirements.txt
 # Ejecutar análisis
 python analyze_fasta.py --input data/ecoli_K12.fasta --outdir results_py --minlen 1000
 
+```
 
 # 🐳 Uso con Docker
-# Construir imagen
+ ## Construir imagen
+```
 docker build -t fasta-analyzer .
-
-# Ejecutar análisis (monta repo local en /work dentro del contenedor)
+```
+## Ejecutar análisis (monta repo local en /work dentro del contenedor)
+```
 docker run --rm -v "$PWD":/work -w /work fasta-analyzer \
   --input data/ecoli_K12.fasta --outdir results_py --minlen 1000
 
-
+```
 
 # 📊 Salida esperada
 
 Ejemplo de CSV:
-
+```
 id,description,length,gc_pct
 NC_000913.3,"Escherichia coli K-12 MG1655, complete genome",4641652,50.791
+```
